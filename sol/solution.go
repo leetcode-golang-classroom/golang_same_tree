@@ -16,7 +16,7 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 		if q.Val != p.Val {
 			return false
 		}
-		return isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Left)
+		return isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Right)
 	}
 	return false
 }
