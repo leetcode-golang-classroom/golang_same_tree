@@ -52,6 +52,13 @@ func CreateBinaryTree(input *[]string) *TreeNode {
 	return tree
 }
 
+func BenchmarkTest(b *testing.B) {
+	p := CreateBinaryTree(&[]string{"1", "2", "3"})
+	q := CreateBinaryTree(&[]string{"1", "2", "3"})
+	for idx := 0; idx < b.N; idx++ {
+		isSameTree(p, q)
+	}
+}
 func Test_isSameTree(t *testing.T) {
 	type args struct {
 		p *TreeNode
